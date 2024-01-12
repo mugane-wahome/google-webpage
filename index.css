@@ -1,0 +1,42 @@
+body{
+    background-color: #A1C6E0;
+
+
+    
+
+}
+
+#g{border-radius: 50%;
+height: 200px;
+width: 200px;}
+
+.container{display: flex;
+    flex-direction: column;
+    background-color: #E1EDF6;
+    align-items: center;
+width: 400px;
+height: 600px;
+margin: auto;
+justify-content: center;
+border-radius: 30px;
+
+}
+.images{display: flex;
+    flex-direction: row;
+    size: 10px;   
+    width: 20px; 
+    justify-content: space-between;
+    gap: 20px;
+    
+}
+#facebook, #twitter, #insta{width: 40px;
+
+}
+.search{
+    padding-top: 40px ;
+}
+.button{background-color: white;
+border-radius: 5px;}
+
+p{font-family: sans-serif;
+    font-size: medium;
