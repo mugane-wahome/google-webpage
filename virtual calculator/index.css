@@ -1,0 +1,38 @@
+body{background-color: #EEEEEE;
+align-self: center;
+justify-content: center;
+}
+.heading{color:black;
+font-style: normal;
+text-align: center;
+padding-right: 450px;
+}
+
+.content{display: flex;
+flex-direction: column;}
+
+.main{padding-left: 300px;}
+p{justify-content: center;
+font-size: xx-large;}
+
+
+#price, #quantity{width: 500px;
+height: 40px;
+font-size: x-large;
+background-color: white;}
+
+.form{ 
+    font-size: x-large;
+}
+.answer{
+    padding-left: 330px;
+    width: 300px;
+    padding-top: 40px;
+    
+}
+#result{height: 50px;
+    background-color: #EEEEEE;
+    border:none ;
+    padding-left:90px ;
+    font-size: xx-large;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <!-- create the following files: -->
+    <div class="main">
+      <div class="heading">        <h2><strong>MY CALCULATOR</strong> </h2></div>
+
+        <div class="content">
+            <form action="#">
+                <p>Price</p>
+                <input type="number" name="price" placeholder="ksh" id="price">
+                <p>Quantity</p>
+                <input type="number" name="quantity" placeholder="kg" id="quantity">
+            </form>
+        </div>
+        <div class="answer">
+            <input type="number" name="result" id="result" placeholder="result" disabled>
+        </div>
+    </div>
+</body>
+<script> 
+
+const priceInput = document.getElementById("price");
+const quantityInput = document.getElementById("quantity");
+const resultDisplay = document.getElementById("result");
+function calculateTotal() {
+  const price = parseFloat(priceInput.value);
+  const quantity = parseFloat(quantityInput.value);
+  if (isNaN(price) || isNaN(quantity)) {
+    resultDisplay.value = "Invalid input";
+  } else {
+    const total = price * quantity;
+    resultDisplay.value = total.toFixed(2); 
+  }
+}
+priceInput.addEventListener("change", calculateTotal);
+quantityInput.addEventListener("change", calculateTotal);
+</script>
+
+</html>
