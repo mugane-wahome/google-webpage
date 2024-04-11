@@ -57,7 +57,7 @@ body {
     cursor: not-allowed;
   }
 
-  /* .answer input {
+   .answer input {
     width: 100%;
     padding: 10px;
     border: none;
@@ -66,4 +66,4 @@ body {
     color: #444;
     background-color: #f5f5f5;
     cursor: not-allowed;
-  } */
+  } 
