@@ -9,31 +9,17 @@
 </head>
 
 <body>
+  <!-- create the following files: -->
     <div class="main">
-        <div class="navbar">
-            <div class="nav-item">
-                <button id="login-button">Login</button>
-            </div>
-            <div class="nav-item">
-                <select id="units">
-                    <option value="kg">kg</option>
-                    <option value="ml">ml</option>
-                    <option value="litre">litre</option>
-                    <option value="grams">grams</option>
-                </select>
-            </div>
-        </div>
-        <div class="heading">
-            <h2><strong>MY CALCULATOR</strong></h2>
-        </div>
+      
+      <div class="heading">        <h2><strong>MY CALCULATOR</strong> </h2></div>
 
         <div class="content">
             <form action="#">
                 <p>Price</p>
-                <input type="number" name="price" placeholder="ksh" id="price" disabled>
+                <input type="number" name="price" placeholder="ksh" id="price">
                 <p>Quantity</p>
-                <input type="number" name="quantity" placeholder="kg" id="quantity" disabled>
-                <button id="calculate-button" disabled>Calculate</button>
+                <input type="number" name="quantity" placeholder="kg" id="quantity">
             </form>
         </div>
         <div class="answer">
@@ -41,29 +27,23 @@
         </div>
     </div>
 </body>
-<script>
-    const loginButton = document.getElementById("login-button");
-    const priceInput = document.getElementById("price");
-    const quantityInput = document.getElementById("quantity");
-    const calculateButton = document.getElementById("calculate-button");
+<script> 
 
-    loginButton.addEventListener("click", () => {
-        alert("You have logged in. Proceed to calculation.");
-        priceInput.disabled = false;
-        quantityInput.disabled = false;
-        calculateButton.disabled = false;
-    });
-
-    calculateButton.addEventListener("click", () => {
-        const price = parseFloat(priceInput.value);
-        const quantity = parseFloat(quantityInput.value);
-        if (isNaN(price) || isNaN(quantity)) {
-            alert("Invalid input");
-        } else {
-            const total = price * quantity;
-            alert(`The total is: ${total.toFixed(2)}`);
-        }
-    });
+const priceInput = document.getElementById("price");
+const quantityInput = document.getElementById("quantity");
+const resultDisplay = document.getElementById("result");
+function calculateTotal() {
+  const price = parseFloat(priceInput.value);
+  const quantity = parseFloat(quantityInput.value);
+  if (isNaN(price) || isNaN(quantity)) {
+    resultDisplay.value = "Invalid input";
+  } else {
+    const total = price * quantity;
+    resultDisplay.value = total.toFixed(2); 
+  }
+}
+priceInput.addEventListener("change", calculateTotal);
+quantityInput.addEventListener("change", calculateTotal);
 </script>
 
 </html>
