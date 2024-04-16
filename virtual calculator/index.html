@@ -41,21 +41,28 @@
 </body>
 <script> 
 
+const loginButton = document.getElementById("login-button");
 const priceInput = document.getElementById("price");
 const quantityInput = document.getElementById("quantity");
-const resultDisplay = document.getElementById("result");
-function calculateTotal() {
+const calculateButton = document.getElementById("calculate-button");
+
+loginButton.addEventListener("click", () => {
+  alert("You have logged in. Proceed to calculation.");
+  priceInput.disabled = false;
+  quantityInput.disabled = false;
+  calculateButton.disabled = false;
+});
+
+calculateButton.addEventListener("click", () => {
   const price = parseFloat(priceInput.value);
   const quantity = parseFloat(quantityInput.value);
   if (isNaN(price) || isNaN(quantity)) {
-    resultDisplay.value = "Invalid input";
+    alert("Invalid input");
   } else {
     const total = price * quantity;
-    resultDisplay.value = total.toFixed(2); 
+    alert(`The total is: ${total.toFixed(2)}`);
   }
-}
-priceInput.addEventListener("change", calculateTotal);
-quantityInput.addEventListener("change", calculateTotal);
+});
 </script>
 
 </html>
